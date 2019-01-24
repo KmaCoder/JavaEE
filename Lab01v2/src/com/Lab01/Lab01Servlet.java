@@ -23,7 +23,9 @@ public class Lab01Servlet extends HttpServlet {
         String login = request.getParameter("login");
         String pass = request.getParameter("pass");
 
-        if(login.equals("admin") && pass.equals("admin")) {
+        LoginModel model = new LoginModel();
+
+        if(model.isValidData(login, pass)) {
             request.setAttribute("Title", "Welcome");
             request.setAttribute("Body", "Welcome back, "+ login);
         } else {
