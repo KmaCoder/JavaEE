@@ -22,27 +22,7 @@ public class Printer {
         System.out.println(someString);
     }
 
-    public List<String> getSomeList() {
-        return someList;
-    }
-
-    public void setSomeList(List<String> someList) {
-        this.someList = someList;
-    }
-
-    public int getDigit() {
-        return digit;
-    }
-
-    public void setDigit(int digit) {
-        this.digit = digit;
-    }
-
-    public String getSomeString() {
-        return someString;
-    }
-
-    public void setSomeString(String someString) {
-        this.someString = someString;
+    public void print2() {
+        System.out.println("\nPrint 2 method called!!!");
     }
 }
