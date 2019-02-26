@@ -4,17 +4,16 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="printer" class="com.maksymnesterov.spring.Printer">
-
         <constructor-arg index="0">
             <list>
                 <value>A</value>
                 <value>B</value>
-                <value>A</value>
                 <value>C</value>
+                <value>D</value>
             </list>
         </constructor-arg>
-        <constructor-arg index="1" value="189"/>
-        <constructor-arg index="2" value="Vasya"/>
+        <constructor-arg index="1" value="123"/>
+        <constructor-arg index="2" value="Qwerty"/>
     </bean>
 
     <bean id="app" class="com.maksymnesterov.spring.Application">
