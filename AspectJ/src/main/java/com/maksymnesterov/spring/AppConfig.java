@@ -1,23 +1,23 @@
 package com.maksymnesterov.spring;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.maksymnesterov.spring.annotations.PerformerKURACH;
+import com.maksymnesterov.spring.annotations.PerformerNEKURACH;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import java.util.Arrays;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @Configuration
+@EnableAspectJAutoProxy
+@ComponentScan(basePackages = "com.maksymnesterov.spring.annotations")
 public class AppConfig {
 
-    @Autowired
-    private Printer printer;
-
     @Bean
-    public Printer getPrinter() {
-        return new Printer(Arrays.asList("A", "B", "C"), 99, "Qwerty");
+    public PerformerNEKURACH normPerformer() {
+        return new PerformerNEKURACH();
     }
 
-    @Bean
-    public Application getApp() {
-        return new Application(printer);
+    @Bean public PerformerKURACH neNormPerformer() {
+        return new PerformerKURACH();
     }
 }
