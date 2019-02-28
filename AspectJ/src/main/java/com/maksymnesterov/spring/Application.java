@@ -1,9 +1,11 @@
 package com.maksymnesterov.spring;
 
 import com.maksymnesterov.spring.annotations.IPerformer;
-import com.maksymnesterov.spring.annotations.PerformerKURACH;
-import com.maksymnesterov.spring.annotations.PerformerNEKURACH;
+import com.maksymnesterov.spring.xml.Magician;
+import com.maksymnesterov.spring.xml.Thinker;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Application {
 
@@ -16,7 +18,7 @@ public class Application {
         xml();
     }
 
-    private void annotations(){
+    private void annotations() {
         AnnotationConfigApplicationContext annotationContext = new AnnotationConfigApplicationContext();
         annotationContext.register(AppConfig.class);
         annotationContext.refresh();
@@ -27,19 +29,17 @@ public class Application {
             normPerformer.perform();
             neNormPerformer.perform();
         } catch (Exception ignored) {
-
         }
     }
 
-    private void xml(){
-        //        ApplicationContext xmlContext = new ClassPathXmlApplicationContext("aspectJ.xml");
-//        Thinker volunteer = (Thinker) xmlContext.getBean("volunteer");
-//        Magician magician = (Magician) xmlContext.getBean("magician");
-//        volunteer.thinkOfSomething("I am THINKING ...");
-//        try {
-//            magician.getThoughts();
-//        } catch (WrongInterceptionException ignored) {
-//
-//        }
+    private void xml() {
+        ApplicationContext xmlContext = new ClassPathXmlApplicationContext("aspectJ.xml");
+        Thinker volunteer = (Thinker) xmlContext.getBean("volunteer");
+        Magician magician = (Magician) xmlContext.getBean("magician");
+        volunteer.thinkOfSomething("Volunteer is THINKING ...");
+        try {
+            magician.getThoughts();
+        } catch (Exception ignored) {
+        }
     }
 }
