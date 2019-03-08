@@ -1,8 +1,15 @@
 package com.maxnesterov.labdb.model;
 
 public class Student {
+    private int id;
     private String pib;
     private int course;
+
+    public Student(int id, String pib, int course) {
+        this.id = id;
+        this.pib = pib;
+        this.course = course;
+    }
 
     public Student(String pib, int course) {
         this.pib = pib;
@@ -12,16 +19,11 @@ public class Student {
     public int getCourse() {
         return course;
     }
-
-    public void setCourse(int course) {
-        this.course = course;
-    }
-
     public String getPib() {
         return pib;
     }
 
-    public void setPib(String pib) {
-        this.pib = pib;
+    public int getId() {
+        return id;
     }
 }

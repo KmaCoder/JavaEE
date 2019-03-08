@@ -19,6 +19,29 @@
 
     <bean id="worker" class="com.maxnesterov.labdb.workers.WorkWithStudent"/>
 
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="packagesToScan" value="com.maxnesterov.labdb.model" />
+        <property name="hibernateProperties">
+            <props>
+                <prop key="dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory"/>
+        </property>
+    </bean>
+    <tx:annotation-driven/>
+
+    <bean id="teachersWorker" class="com.maxnesterov.labdb.workers.WorkWithTeacher"/>
+
     <context:component-scan
             base-package="com.maxnesterov.labdb.dao"/>
 
