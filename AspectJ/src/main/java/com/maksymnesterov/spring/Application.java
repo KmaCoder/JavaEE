@@ -14,7 +14,7 @@ public class Application {
     }
 
     private Application() {
-        annotations();
+//        annotations();
         xml();
     }
 
@@ -36,7 +36,7 @@ public class Application {
         ApplicationContext xmlContext = new ClassPathXmlApplicationContext("aspectJ.xml");
         Thinker volunteer = (Thinker) xmlContext.getBean("volunteer");
         Magician magician = (Magician) xmlContext.getBean("magician");
-        volunteer.thinkOfSomething("Volunteer is THINKING ...");
+        volunteer.thinkOfSomething("Volunteer thinks...");
         try {
             magician.getThoughts();
         } catch (Exception ignored) {
