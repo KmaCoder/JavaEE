@@ -21,10 +21,10 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
     <tx:annotation-driven/>
 
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/testJDBC"/>
-        <property name="username" value="root"/>
-        <property name="password" value="root"/>
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="url" value="jdbc:postgresql://localhost:5432/javaeespring"/>
+        <property name="username" value="postgres"/>
+        <property name="password" value="karpovich"/>
         <property name="initialSize" value="5"/>
         <property name="maxTotal" value="10"/>
     </bean>
@@ -36,10 +36,10 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
     </bean>
 
     <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-        <property name="database" value="MYSQL"/>
+        <property name="database" value="POSTGRESQL"/>
         <property name="showSql" value="true"/>
         <property name="generateDdl" value="false"/>
-        <property name="databasePlatform" value="org.hibernate.dialect.MySQLDialect"/>
+        <property name="databasePlatform" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
     </bean>
 
     <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>

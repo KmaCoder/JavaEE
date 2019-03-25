@@ -15,7 +15,7 @@
 ${mainText}<br/>
 <c:if test="${studentsList ne null}">
     <c:forEach items="${studentsList}" var="student" varStatus="index">
-        ${index.index+1}.) ${student.pib}<br/>
+        ${index.index+1}) ${student.pib}<br/>
     </c:forEach>
 </c:if>
 

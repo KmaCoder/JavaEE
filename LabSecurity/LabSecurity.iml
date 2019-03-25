@@ -21,7 +21,7 @@
         <setting name="validation-enabled" value="true" />
         <datasource-mapping>
           <factory-entry name="emf" />
-          <factory-entry name="myUnit" />
+          <factory-entry name="myUnit" value="64c03f47-9c0a-4182-9b09-3656b38ad9c4" />
         </datasource-mapping>
         <naming-strategy-map />
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/webapp/WEB-INF/persistence.xml" />

@@ -7,5 +7,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/javaeelabdb</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="javaeespring@localhost" uuid="64c03f47-9c0a-4182-9b09-3656b38ad9c4">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/javaeespring</jdbc-url>
+    </data-source>
   </component>
 </project>
