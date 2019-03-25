@@ -13,9 +13,9 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
     <context:component-scan
-            base-package="main.mvc.controllers,
-                          main.mvc.dao,
-                          main.mvc.services,
+            base-package="main.mvc.controllers
+                          main.mvc.dao
+                          main.mvc.services
                           main.mvc.entities"/>
 
     <tx:annotation-driven/>
