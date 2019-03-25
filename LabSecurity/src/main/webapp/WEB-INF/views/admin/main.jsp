@@ -15,9 +15,19 @@
 ${mainText}<br/>
 <c:if test="${studentsList ne null}">
     <c:forEach items="${studentsList}" var="student" varStatus="index">
-        ${index.index+1}.) <a href="/students/${student.pib}">${student.pib}</a><br/>
+        ${index.index+1}.) <a href="students/${student.studentId}">${student.pib}</a><br/>
     </c:forEach>
 </c:if>
-<a href="/students?new">Add new student</a>
+<form method="post" style="margin-top: 30px">
+    <input type="text" name="pib" placeholder="PIB">
+    <input type="number" name="course" placeholder="Course">
+    <button type="submit">Add new student</button>
+</form>
+
+<c:url value="/j_spring_security_logout" var="logoutUrl" />
+<form action="${logoutUrl}" method="post" id="logoutForm">
+    <button type="submit" name="${_csrf.parameterName}"
+            value="${_csrf.token}" >Logout</button>
+</form>
 </body>
 </html>

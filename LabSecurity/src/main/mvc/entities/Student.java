@@ -16,13 +16,21 @@ public class Student implements Serializable {
     public static final String getStudentByPib = "Student.getStudentByPib";
     public static final String getStudentsByCourse = "Student.getStudentsByCourse";
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int studentId;
 
     private String pib;
     private int course;
 
+    public Student() {
+
+    }
+
+    public Student(String pib, int course) {
+        this.pib = pib;
+        this.course = course;
+    }
 
     public int getStudentId() {
         return studentId;
