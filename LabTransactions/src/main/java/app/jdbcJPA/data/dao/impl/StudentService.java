@@ -44,6 +44,21 @@ public class StudentService implements StudentDAO {
         return student;
     }
 
+//    @Override
+//    public Student addStudent(Student student) {
+//        try {
+//            em.getTransaction().begin();
+//            em.persist(student);
+//            em.getTransaction().commit();
+//            return student;
+//
+//        }
+//        catch (Exception e) {
+//            em.getTransaction().rollback();
+//            return null;
+//        }
+//    }
+
     @Override
     @Transactional
     @Cacheable("customersCache")

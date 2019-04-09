@@ -11,7 +11,6 @@ public class Address {
     private Long id;
     private String street;
     private String city;
-    private String zipcode;
     private String country;
 // Constructors, getters, setters
 
@@ -19,10 +18,9 @@ public class Address {
 
     }
 
-    public Address(String street, String city, String zipcode, String country) {
+    public Address(String street, String city, String country) {
         this.street = street;
         this.city = city;
-        this.zipcode = zipcode;
         this.country = country;
     }
 
@@ -49,15 +47,6 @@ public class Address {
     public void setCity(String city) {
         this.city = city;
     }
-
-    public String getZipcode() {
-        return zipcode;
-    }
-
-    public void setZipcode(String zipcode) {
-        this.zipcode = zipcode;
-    }
-
     public String getCountry() {
         return country;
     }
@@ -74,13 +63,12 @@ public class Address {
         return Objects.equals(getId(), address.getId()) &&
                 Objects.equals(getStreet(), address.getStreet()) &&
                 Objects.equals(getCity(), address.getCity()) &&
-                Objects.equals(getZipcode(), address.getZipcode()) &&
                 Objects.equals(getCountry(), address.getCountry());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getStreet(), getCity(), getZipcode(), getCountry());
+        return Objects.hash(getId(), getStreet(), getCity(), getCountry());
     }
 
     @Override
@@ -89,7 +77,6 @@ public class Address {
                 "id=" + id +
                 ", street1='" + street + '\'' +
                 ", city='" + city + '\'' +
-                ", zipcode='" + zipcode + '\'' +
                 ", country='" + country + '\'' +
                 '}';
     }

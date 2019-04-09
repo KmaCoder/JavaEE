@@ -27,34 +27,40 @@ public class App {
 //        studentWorker.addStudents(App.generateStudents());
 
         System.out.println(StudentService.ANSI_GREEN + "\n\nGet all students" + StudentService.ANSI_RESET);
-        System.out.println(studentWorker.getAllStudents());
+        System.out.println(StudentService.ANSI_YELLOW + studentWorker.getAllStudents() + StudentService.ANSI_RESET);
 
         System.out.println(StudentService.ANSI_GREEN + "\n\nGet student by last name" + StudentService.ANSI_RESET);
-        System.out.println(studentWorker.getStudentsByName("Leskiv"));
+        System.out.println(StudentService.ANSI_YELLOW + studentWorker.getStudentsByName("Leskiv") + StudentService.ANSI_RESET);
 
         System.out.println(StudentService.ANSI_GREEN + "\n\nGet student by last name Nesterovich" + StudentService.ANSI_RESET);
-        System.out.println(studentWorker.getStudentsByName("Nesterovich"));
+        System.out.println(StudentService.ANSI_YELLOW + studentWorker.getStudentsByName("Nesterovich") + StudentService.ANSI_RESET);
 
         System.out.println(StudentService.ANSI_GREEN + "\n\nGet student by last name Nesterovich again" + StudentService.ANSI_RESET);
-        System.out.println(studentWorker.getStudentsByName("Nesterovich"));
+        System.out.println(StudentService.ANSI_YELLOW + studentWorker.getStudentsByName("Nesterovich") + StudentService.ANSI_RESET);
 
-        System.out.println(StudentService.ANSI_GREEN + "\n\nGet student by last name Nesterovich again" + StudentService.ANSI_RESET);
+        System.out.println(StudentService.ANSI_GREEN + "\n\nGet student by last name Nesterovich again and setting wrong email" + StudentService.ANSI_RESET);
         Student student = studentWorker.getStudentsByName("Nesterovich").get(0);
-        System.out.println(student);
+        System.out.println(StudentService.ANSI_YELLOW + student + StudentService.ANSI_RESET);
         student.setEmail("wrongemail");
         studentWorker.saveStudent(student);
 
-        PropertyPlaceholderConfigurer values = context.getBean(PropertyPlaceholderConfigurer.class);
-        System.out.println(values.getValues());
+        System.out.println(StudentService.ANSI_GREEN + "\n\nGet student by last name Nesterovich again, but setting correct email" + StudentService.ANSI_RESET);
+        student = studentWorker.getStudentsByName("Nesterovich").get(0);
+        System.out.println(StudentService.ANSI_YELLOW + student + StudentService.ANSI_RESET);
+        student.setEmail("newemail@mail.com");
+        studentWorker.saveStudent(student);
+
+//        PropertyPlaceholderConfigurer values = context.getBean(PropertyPlaceholderConfigurer.class);
+//        System.out.println(values.getValues());
 
     }
 
     private static List<Student> generateStudents() {
         List<Student> students = new LinkedList<>();
-        students.add(new Student("Kyrylo", "Kundik", "qqq@www.eee", new Date(1000000L), new Address("lya kakaya", "KYIV GEROI", "02068", "UA")));
-        students.add(new Student("Kolya", "Mariel", "rrr@ttt.yyy", new Date(1500000L), new Address("lya kakaya street", "DRABIV GEROI", "1", "EU")));
-        students.add(new Student("Max", "Nesterovich", "uuu@iii.ooo", new Date(2000000L), new Address("lya kakaya boulevard", "BELAYA CERKVA GEROI", "0", "UK")));
-        students.add(new Student("Sashka", "Leskiv", "ppp@aaa.sss", new Date(2500000L), new Address("lya kakaya road", "KYIV GEROI", "01068", "UA")));
+        students.add(new Student("Max", "Nesterovich", "uuu@iii.ooo", new Date(2000000L), new Address("lya kakaya boulevard", "BELAYA CERKVA GEROI", "UK")));
+        students.add(new Student("Sashka", "Leskiv", "ppp@aaa.sss", new Date(2500000L), new Address("lya kakaya road", "KYIV GEROI", "UA")));
+        students.add(new Student("Kyrylo", "Kundik", "qqq@www.eee", new Date(1000000L), new Address("lya kakaya", "KYIV GEROI", "UA")));
+        students.add(new Student("Kolya", "Mariel", "rrr@ttt.yyy", new Date(1500000L), new Address("lya kakaya street", "DRABIV GEROI", "EU")));
         return students;
     }
 

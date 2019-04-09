@@ -125,8 +125,8 @@ sequence|table|17711|17713|1
       <Comment>standard public schema</Comment>
       <StateNumber>663</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionTimestamp>2019-04-09.12:19:56.956</IntrospectionTimestamp>
-      <IntrospectionStateNumber>1864</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2019-04-09.12:46:01.177</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1870</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -243,40 +243,33 @@ sequence|table|17711|17713|1
       <StateNumber>1831</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="38" parent="32" name="zipcode">
-      <Position>4</Position>
-      <DataType>varchar(100)|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1832</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="39" parent="32" name="country">
+    <column id="38" parent="32" name="country">
       <Position>5</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1833</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="40" parent="32" name="address_id_uindex">
+    <index id="39" parent="32" name="address_id_uindex">
       <ObjectId>17700</ObjectId>
       <StateNumber>1834</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="41" parent="32" name="address_pk">
+    <index id="40" parent="32" name="address_pk">
       <ObjectId>17701</ObjectId>
       <StateNumber>1835</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="42" parent="32" name="address_pk">
+    <key id="41" parent="32" name="address_pk">
       <ObjectId>17702</ObjectId>
       <StateNumber>1835</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>address_pk</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="43" parent="33" name="id">
+    <column id="42" parent="33" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -284,34 +277,34 @@ sequence|table|17711|17713|1
       <DefaultExpression>nextval(&apos;lectures_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="44" parent="33" name="name">
+    <column id="43" parent="33" name="name">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1854</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="45" parent="33" name="credits">
+    <column id="44" parent="33" name="credits">
       <Position>3</Position>
       <DataType>double precision|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1854</StateNumber>
       <TypeId>701</TypeId>
     </column>
-    <index id="46" parent="33" name="lectures_pk">
+    <index id="45" parent="33" name="lectures_pk">
       <ObjectId>17717</ObjectId>
       <StateNumber>1854</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="47" parent="33" name="lectures_pk">
+    <key id="46" parent="33" name="lectures_pk">
       <ObjectId>17718</ObjectId>
       <StateNumber>1854</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>lectures_pk</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="48" parent="34" name="id">
+    <column id="47" parent="34" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -319,68 +312,68 @@ sequence|table|17711|17713|1
       <DefaultExpression>nextval(&apos;customer_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="49" parent="34" name="c_version">
+    <column id="48" parent="34" name="c_version">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1825</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="50" parent="34" name="first_name">
+    <column id="49" parent="34" name="first_name">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1825</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="51" parent="34" name="last_name">
+    <column id="50" parent="34" name="last_name">
       <Position>4</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1825</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="52" parent="34" name="email">
+    <column id="51" parent="34" name="email">
       <Position>5</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1864</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="53" parent="34" name="date_of_birth">
+    <column id="52" parent="34" name="date_of_birth">
       <Position>6</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1825</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="54" parent="34" name="address_fk">
+    <column id="53" parent="34" name="address_fk">
       <Position>7</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1825</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="55" parent="34" name="customer_id_uindex">
+    <index id="54" parent="34" name="customer_id_uindex">
       <ObjectId>17688</ObjectId>
       <StateNumber>1826</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="56" parent="34" name="customer_pk">
+    <index id="55" parent="34" name="customer_pk">
       <ObjectId>17689</ObjectId>
       <StateNumber>1827</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="57" parent="34" name="customer_pk">
+    <key id="56" parent="34" name="customer_pk">
       <ObjectId>17690</ObjectId>
       <StateNumber>1827</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>customer_pk</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="58" parent="34" name="customer_address_id_fk">
+    <foreign-key id="57" parent="34" name="customer_address_id_fk">
       <ObjectId>17703</ObjectId>
       <StateNumber>1836</StateNumber>
       <ColNames>address_fk</ColNames>

@@ -1,6 +1,7 @@
 package app.jdbcJPA.worker;
 
 import app.jdbcJPA.data.dao.StudentDAO;
+import app.jdbcJPA.data.dao.impl.StudentService;
 import app.jdbcJPA.data.entities.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -26,7 +27,7 @@ public class StudentWorker {
     public void saveStudent(Student student) {
         try {
             studentService.saveStudent(student);
-            System.out.println("Student saved");
+            System.out.println(StudentService.ANSI_BLUE + "Student saved" + StudentService.ANSI_RESET);
         } catch (Exception e) {
             System.err.println(e.toString());
         }
