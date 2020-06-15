@@ -21,7 +21,7 @@
     </build>
 
     <properties>
-        <spring.version>3.2.13.RELEASE</spring.version>
+        <spring.version>5.2.7.RELEASE</spring.version>
         <dbcp.version>2.0.1</dbcp.version>
     </properties>
 
